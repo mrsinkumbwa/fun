@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namibian Tourism</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom color scheme */
+        .bg-primary-60 {
+            background-color: rgba(0, 123, 255, 0.6); /* 60% opacity */
+        }
+        
+        .bg-primary-30 {
+            background-color: rgba(0, 123, 255, 0.3); /* 30% opacity */
+        }
+        
+        .bg-primary-10 {
+            background-color: rgba(0, 123, 255, 0.1); /* 10% opacity */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary-60 text-white">
+        <div class="container mx-auto">
+            <nav class="flex justify-between items-center p-4">
+                <!-- Logo -->
+                <a class="text-lg font-semibold flex items-center" href="#">
+                    <img src="logo.svg" alt="Namibian Tourism Logo" class="inline-block mr-2 h-6">
+                    Namibian Tourism
+                </a>
+
+                <!-- Navigation Items -->
+                <ul class="flex space-x-4">
+                    <li class="nav-item">
+                        <a class="nav-link hover:text-blue-300" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover:text-blue-300" href="#">Tours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover:text-blue-300" href="#">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover:text-blue-300" href="#">About Us</a>
+                    </li>
+                </ul>
+
+                <!-- Sign Up and Sign In Options -->
+                <ul class="flex space-x-4">
+                    <li class="nav-item">
+                        <a class="nav-link hover:text-blue-300" href="#" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover:text-blue-300" href="#" data-toggle="modal" data-target="#signinModal">Sign In</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8">
+        <div id="dynamicContent">
+            <!-- Content dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div class="modal fixed inset-0 flex items-center justify-center hidden" id="signupModal" tabindex="-1" role="dialog">
+        <div class="modal-background fixed inset-0 bg-black opacity-50"></div>
+        <div class="modal-content bg-white p-6 max-w-md mx-auto rounded-lg shadow-lg z-50">
+            <div class="text-xl font-semibold mb-4">Sign Up</div>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Username</label>
+                    <input type="text" id="signupUsername" placeholder="Enter username" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Email address</label>
+                    <input type="email" id="signupEmail" placeholder="Enter email" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Password" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" placeholder="Confirm password" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" id="agreeTerms" class="form-checkbox">
+                        <span class="ml-2 text-gray-600">I agree to the terms and conditions</span>
+                    </label>
+                </div>
+                <div class="text-center">
+                    <p>Already have an account? <a href="#" data-toggle="modal" data-target="#signinModal" class="text-blue-500">Sign In</a></p>
+                    <button type="submit" class="mt-4 py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-400">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="modal fixed inset-0 flex items-center justify-center hidden" id="signinModal" tabindex="-1" role="dialog">
+        <div class="modal-background fixed inset-0 bg-black opacity-50"></div>
+        <div class="modal-content bg-white p-6 max-w-md mx-auto rounded-lg shadow-lg z-50">
+            <div class="text-xl font-semibold mb-4">Sign In</div>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Email address</label>
+                    <input type="email" id="signinEmail" placeholder="Enter email" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Password</label>
+                    <input type="password" id="signinPassword" placeholder="Password" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="text-center">
+                    <p>Don't have an account? <a href="#" data-toggle="modal" data-target="#signupModal" class="text-blue-500">Sign Up</a> |
+                        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" class="text-blue-500">Forgot Password?</a>
+                    </p>
+                    <button type="submit" class="mt-4 py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-400">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fixed inset-0 flex items-center justify-center hidden" id="forgotPasswordModal" tabindex="-1" role="dialog">
+        <div class="modal-background fixed inset-0 bg-black opacity-50"></div>
+        <div class="modal-content bg-white p-6 max-w-md mx-auto rounded-lg shadow-lg z-50">
+            <div class="text-xl font-semibold mb-4">Forgot Password</div>
+            <form>
+                <div class="mb-4">
+                    <label class="block text-gray-600">Email address</label>
+                    <input type="email" id="resetEmail" placeholder="Enter email" class="w-full px-4 py-2 border rounded-lg">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="mt-4 py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-400">Reset Password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Enhanced Footer with Icons -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Contact Information -->
+                <div class="mb-8">
+                    <h5 class="text-xl font-semibold mb-4">Contact Us</h5>
+                    <p>Verdi Street</p>
+                    <p>Windhoek, Namibia</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mb-8">
+                    <h5 class="text-xl font-semibold mb-4">Quick Links</h5>
+                    <ul class="list-none">
+                        <li><a href="#" class="text-blue-500 hover:underline">Home</a></li>
+                        <li><a href="#" class="text-blue-500 hover:underline">About Us</a></li>
+                        <li><a href="#" class="text-blue-500 hover:underline">Services</a></li>
+                        <li><a href="#" class="text-blue-500 hover:underline">Products</a></li>
+                        <li><a href="#" class="text-blue-500 hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="mb-8">
+                    <h5 class="text-xl font-semibold mb-4">Follow Us</h5>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="#" class="text-blue-500 hover:underline flex items-center"><i class="fab fa-facebook mr-2"></i>Facebook</a></li>
+                        <li class="mb-2"><a href="#" class="text-blue-500 hover:underline flex items-center"><i class="fab fa-twitter mr-2"></i>Twitter</a></li>
+                        <li class="mb-2"><a href="#" class="text-blue-500 hover:underline flex items-center"><i class="fab fa-instagram mr-2"></i>Instagram</a></li>
+                        <li class="mb-2"><a href="#" class="text-blue-500 hover:underline flex items-center"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="mb-8">
+                    <h5 class="text-xl font-semibold mb-4">Additional Information</h5>
+                    <ul class="list-none">
+                        <li><a href="#" class="text-blue-500 hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="text-blue-500 hover:underline">Terms of Service</a></li>
+                        <li><a href="#" class="text-blue-500 hover:underline">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup Form -->
+            <div class="mt-8">
+                <h5 class="text-xl font-semibold mb-4">Subscribe to Our Newsletter</h5>
+                <form class="flex items-center">
+                    <input type="email" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 px-3 py-2" placeholder="Enter your email">
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200 ml-2">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Copyright Information -->
+            <div class="mt-8 text-center">
+                <p>&copy; 2023 Mbanga Sinkumbwa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Tailwind CSS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <!-- Include Tailwind CSS and JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script>
+        // JavaScript to handle modal toggling
+        document.addEventListener('DOMContentLoaded', function () {
+            const modalTriggers = document.querySelectorAll('[data-toggle]');
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const target = trigger.getAttribute('data-target');
+                    const modal = document.querySelector(target);
+                    
+                    // Hide other modals
+                    document.querySelectorAll('.modal').forEach(otherModal => {
+                        if (otherModal !== modal) {
+                            otherModal.classList.add('hidden');
+                        }
+                    });
+
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            const closeModalButtons = document.querySelectorAll('.modal-background, .modal-content .close-button');
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = button.closest('.modal');
+                    modal.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

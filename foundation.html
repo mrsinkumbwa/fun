@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namibian Tourism</title>
+    <!-- Include Foundation CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/css/foundation.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary-60 text-white">
+        <div class="grid-container">
+            <div class="grid-x align-middle">
+                <!-- Logo -->
+                <div class="cell medium-auto">
+                    <img src="logo.svg" alt="Namibian Tourism Logo" width="50">
+                    Namibian Tourism
+                </div>
+
+                <!-- Navigation Items -->
+                <div class="cell medium-auto">
+                    <ul class="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tours</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sign Up and Sign In Options -->
+                <div class="cell medium-auto text-right">
+                    <ul class="menu">
+                        <li><a href="#" data-open="signupModal">Sign Up</a></li>
+                        <li><a href="#" data-open="signinModal">Sign In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="grid-container">
+        <div id="dynamicContent">
+            <!-- Content dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div class="reveal" id="signupModal" data-reveal>
+        <h2>Sign Up</h2>
+        <form>
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                        <label for="signupUsername">Username</label>
+                        <input type="text" id="signupUsername" placeholder="Enter username">
+                    </div>
+                    <div class="cell">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" id="signupEmail" placeholder="Enter email">
+                    </div>
+                    <div class="cell">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Password">
+                    </div>
+                    <div class="cell">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm password">
+                    </div>
+                    <div class="cell">
+                        <input type="checkbox" id="agreeTerms">
+                        <label for="agreeTerms">I agree to the terms and conditions</label>
+                    </div>
+                    <div class="cell text-center">
+                        <button type="submit" class="button primary">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <p class="text-center">Already have an account? <a href="#" data-close data-open="signinModal">Sign In</a></p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="reveal" id="signinModal" data-reveal>
+        <h2>Sign In</h2>
+        <form>
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                        <label for="signinEmail">Email address</label>
+                        <input type="email" id="signinEmail" placeholder="Enter email">
+                    </div>
+                    <div class="cell">
+                        <label for="signinPassword">Password</label>
+                        <input type="password" id="signinPassword" placeholder="Password">
+                    </div>
+                    <div class="cell text-center">
+                        <button type="submit" class="button primary">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <p class="text-center"><a href="#" data-close data-open="signupModal">Sign Up</a> | <a href="#" data-close data-open="forgotPasswordModal">Forgot Password?</a></p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="reveal" id="forgotPasswordModal" data-reveal>
+        <h2>Forgot Password</h2>
+        <form>
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                        <label for="resetEmail">Email address</label>
+                        <input type="email" id="resetEmail" placeholder="Enter email">
+                    </div>
+                    <div class="cell text-center">
+                        <button type="submit" class="button primary">Reset Password</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Include Foundation JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.3/js/foundation.min.js"></script>
+    <script>
+        // Initialize Foundation
+        $(document).foundation();
+    </script>
+</body>
+</html>

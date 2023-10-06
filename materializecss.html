@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namibian Tourism</title>
+    <!-- Include Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="blue darken-3 white-text">
+        <div class="container">
+            <nav>
+                <div class="nav-wrapper">
+                    <!-- Logo -->
+                    <a href="#" class="brand-logo">
+                        <img src="logo.svg" alt="Namibian Tourism Logo" width="50">
+                        Namibian Tourism
+                    </a>
+                    <!-- Navigation Items -->
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tours</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <!-- Sign Up and Sign In Options -->
+                        <li><a class="modal-trigger" href="#signupModal">Sign Up</a></li>
+                        <li><a class="modal-trigger" href="#signinModal">Sign In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div id="dynamicContent">
+            <!-- Content dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up</h4>
+            <form>
+                <div class="input-field">
+                    <input id="signupUsername" type="text" class="validate" placeholder="Username">
+                </div>
+                <div class="input-field">
+                    <input id="signupEmail" type="email" class="validate" placeholder="Email address">
+                </div>
+                <div class="input-field">
+                    <input id="signupPassword" type="password" class="validate" placeholder="Password">
+                </div>
+                <div class="input-field">
+                    <input id="signupConfirmPassword" type="password" class="validate" placeholder="Confirm password">
+                </div>
+                <p class="center-align">
+                    Already have an account? <a href="#" class="modal-close modal-trigger" data-target="signinModal">Sign In</a>
+                </p>
+                <button class="btn waves-effect waves-light blue lighten-1" type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signinModal" class="modal">
+        <div class="modal-content">
+            <h4>Sign In</h4>
+            <form>
+                <div class="input-field">
+                    <input id="signinEmail" type="email" class="validate" placeholder="Email address">
+                </div>
+                <div class="input-field">
+                    <input id="signinPassword" type="password" class="validate" placeholder="Password">
+                </div>
+                <p class="center-align">
+                    Don't have an account? <a href="#" class="modal-close modal-trigger" data-target="signupModal">Sign Up</a> |
+                    <a href="#" class="modal-trigger" data-target="forgotPasswordModal">Forgot Password?</a>
+                </p>
+                <button class="btn waves-effect waves-light blue lighten-1" type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <h4>Forgot Password</h4>
+            <form>
+                <div class="input-field">
+                    <input id="resetEmail" type="email" class="validate" placeholder="Enter email">
+                </div>
+                <button class="btn waves-effect waves-light blue lighten-1" type="submit">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col s12 m4">
+                    <h5 class="white-text">Contact Us</h5>
+                    <p>Verdi Street</p>
+                    <p>Windhoek, Namibia</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col s12 m4">
+                    <h5 class="white-text">Quick Links</h5>
+                    <ul>
+                        <li><a class="white-text" href="#">Home</a></li>
+                        <li><a class="white-text" href="#">About Us</a></li>
+                        <li><a class="white-text" href="#">Services</a></li>
+                        <li><a class="white-text" href="#">Products</a></li>
+                        <li><a class="white-text" href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="col s12 m4">
+                    <h5 class="white-text">Follow Us</h5>
+                    <ul class="social-icons">
+                        <li><a class="white-text" href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a class="white-text" href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a class="white-text" href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="white-text" href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5 class="white-text">Additional Information</h5>
+                    <ul>
+                        <li><a class="white-text" href="#">Privacy Policy</a></li>
+                        <li><a class="white-text" href="#">Terms of Service</a></li>
+                        <li><a class="white-text" href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Signup Form -->
+                <div class="col s12 m6">
+                    <h5 class="white-text">Subscribe to Our Newsletter</h5>
+                    <form>
+                        <div class="input-field">
+                            <input type="email" class="validate white-text" placeholder="Enter your email">
+                        </div>
+                        <button class="btn waves-effect waves-light blue lighten-1" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright Information -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <p class="white-text">&copy; 2023 Mbanga Sinkumbwa. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Materialize JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialize modals
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
+</body>
+</html>

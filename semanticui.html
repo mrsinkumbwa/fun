@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namibian Tourism</title>
+    <!-- Include Semantic UI CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.2/semantic.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="ui blue inverted menu">
+        <div class="ui container">
+            <!-- Logo -->
+            <a class="header item">
+                <img src="logo.svg" alt="Namibian Tourism Logo" class="ui mini image">
+                Namibian Tourism
+            </a>
+
+            <!-- Navigation Items -->
+            <a class="item">Home</a>
+            <a class="item">Tours</a>
+            <a class="item">Destinations</a>
+            <a class="item">About Us</a>
+
+            <!-- Sign Up and Sign In Options -->
+            <div class="right menu">
+                <a class="item" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                <a class="item" data-toggle="modal" data-target="#signinModal">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ui container" id="dynamicContent">
+        <!-- Content dynamically loaded here -->
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div class="ui modal" id="signupModal">
+        <i class="close icon"></i>
+        <div class="header">Sign Up</div>
+        <div class="content">
+            <form class="ui form">
+                <div class="field">
+                    <label>Username</label>
+                    <input type="text" id="signupUsername" placeholder="Enter username">
+                </div>
+                <div class="field">
+                    <label>Email address</label>
+                    <input type="email" id="signupEmail" placeholder="Enter email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" placeholder="Password">
+                </div>
+                <div class="field">
+                    <label>Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" placeholder="Confirm password">
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" id="agreeTerms">
+                        <label for="agreeTerms">I agree to the terms and conditions</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <p>Already have an account? <a href="#" data-toggle="modal" data-target="#signinModal">Sign In</a></p>
+            <button class="ui primary button" type="submit">Sign Up</button>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="ui modal" id="signinModal">
+        <i class="close icon"></i>
+        <div class="header">Sign In</div>
+        <div class="content">
+            <form class="ui form">
+                <div class="field">
+                    <label>Email address</label>
+                    <input type="email" id="signinEmail" placeholder="Enter email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" id="signinPassword" placeholder="Password">
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <p>Don't have an account? <a href="#" data-toggle="modal" data-target="#signupModal">Sign Up</a> | <a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a></p>
+            <button class="ui primary button" type="submit">Sign In</button>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="ui modal" id="forgotPasswordModal">
+        <i class="close icon"></i>
+        <div class="header">Forgot Password</div>
+        <div class="content">
+            <form class="ui form">
+                <div class="field">
+                    <label>Email address</label>
+                    <input type="email" id="resetEmail" placeholder="Enter email">
+                </div>
+            </form>
+        </div>
+        <div class="actions">
+            <button class="ui primary button" type="submit">Reset Password</button>
+        </div>
+    </div>
+
+    <!-- Include jQuery and Semantic UI JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.2/semantic.min.js"></script>
+    <script>
+        // JavaScript to handle modal toggling
+        $(document).ready(function () {
+            $('.ui.modal').modal({
+                inverted: true
+            });
+
+            $('[data-toggle="modal"]').click(function () {
+                var target = $(this).data('target');
+                $(target).modal('show');
+            });
+        });
+    </script>
+</body>
+</html>

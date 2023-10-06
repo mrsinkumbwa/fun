@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namibian Tourism</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+        /* Custom color scheme */
+        .bg-primary-60 {
+            background-color: rgba(86, 123, 255, 0.6); /* 60% opacity */
+        }
+        
+        .bg-primary-30 {
+            background-color: rgba(0, 123, 255, 0.3); /* 30% opacity */
+        }
+        
+        .bg-primary-10 {
+            background-color: rgba(0, 123, 255, 0.1); /* 10% opacity */
+        }
+
+        /* Improved footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .contact-info, .quick-links, .follow-us, .additional-info, .newsletter-form, .copyright {
+            margin-bottom: 20px;
+        }
+
+        .social-icons .list-inline-item {
+            margin-right: 15px;
+        }
+
+        .newsletter-form .input-group {
+            width: 100%;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-image: url(''); /* Add Unsplash image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 7rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+            color: #5477b9;
+        }
+
+        .hero p {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 100;
+            color: #fff48e;
+        }
+
+        .hero a.btn {
+            font-size: 18px;
+            border-radius: 25px;
+            padding: 10px 30px;
+            margin-top: 20px;
+        }
+        /* CSS for Button Animation */
+        .btn-primary {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05); /* Increase size on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+        }
+
+        /* CSS for Hero Animation */
+        .hero-content .hero-paragraph {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* Add this CSS code to your existing stylesheet */
+
+        /* Responsive styles for hero section */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 4rem; /* Decrease font size for smaller screens */
+            }
+            .hero p {
+                font-size: 2rem; /* Decrease font size for smaller screens */
+            }
+        }
+
+        /* Responsive styles for tour cards */
+        @media (max-width: 768px) {
+            .tour-card-img {
+                width: 100%; /* Make tour card images full width for smaller screens */
+            }
+        }
+
+        /* Responsive styles for footer */
+        @media (max-width: 768px) {
+            footer {
+                padding: 20px 0; /* Decrease footer padding for smaller screens */
+            }
+            .contact-info, .quick-links, .follow-us, .additional-info, .newsletter-form, .copyright {
+                margin-bottom: 10px; /* Reduce margin bottom for smaller screens */
+            }
+        }
+
+        /* Hamburger menu icon is responsive by default in Bootstrap */
+
+        /* Buttons are responsive by default in Bootstrap */
+        /* Add this CSS code to your existing stylesheet */
+
+        /* Responsive styles for hero section */
+        @media (min-width: 992px) {
+            .hero h1 {
+                font-size: 8rem; /* Increase font size for larger screens */
+            }
+            .hero p {
+                font-size: 3rem; /* Increase font size for larger screens */
+            }
+        }
+
+        /* Responsive styles for tour cards */
+        @media (min-width: 992px) {
+            .tour-card-img {
+                max-width: 100%; /* Make tour card images responsive for larger screens */
+            }
+        }
+
+        /* Responsive styles for footer */
+        @media (min-width: 992px) {
+            footer {
+                padding: 40px 0; /* Increase footer padding for larger screens */
+            }
+            .contact-info, .quick-links, .follow-us, .additional-info, .newsletter-form, .copyright {
+                margin-bottom: 30px; /* Increase margin bottom for larger screens */
+            }
+        }
+
+        /* Responsive styles for header */
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                margin-left: auto; /* Right-align navigation items for larger screens */
+            }
+            .navbar-nav .nav-item {
+                margin-left: 20px; /* Add spacing between navigation items for larger screens */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary-60 text-white">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="logo.svg" alt="Namibian Tourism Logo" width="50">
+                    Namibian Tourism
+                </a>
+
+                <!-- Hamburger Icon (Visible on Small Screens) -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Items (Both Lists Merged) -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <!-- Sign Up and Sign In Options -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#signinModal">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Unsplash API Integration -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-heading">Discover Namibia with Us</h1>
+            <p class="hero-paragraph"></p>
+            <a href="#tours" class="btn btn-primary">Explore Tours</a>
+
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Additional Tour Cards -->
+        <section id="tours">
+            <div class="row">
+                <!-- Tour Card 1 -->
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="" class="card-img-top tour-card-img" alt="Tour 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Namib Desert Expedition</h5>
+                            <p class="card-text">Embark on a thrilling journey through the world's oldest desert. Traverse mesmerizing red dunes, encounter unique desert wildlife, and witness captivating sunsets.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tour Card 2 -->
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="" class="card-img-top tour-card-img" alt="Tour 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Wildlife Safari in Etosha</h5>
+                            <p class="card-text">Experience the magic of Etosha National Park. Witness the "Big Five" in their natural habitat, and immerse yourself in the heart of Africa's most celebrated wildlife sanctuary.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tour Card 3 -->
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="" class="card-img-top tour-card-img" alt="Tour 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Cultural Odyssey in Himba Villages</h5>
+                            <p class="card-text">Discover the rich traditions of the Himba people. Engage in cultural exchanges, learn about age-old rituals, and explore the remote beauty of northern Namibia.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tour Card 4 -->
+                <div class="col-md-3">
+                    <div class="card mb-4">
+                        <img src="" class="card-img-top tour-card-img" alt="Tour 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Adventures in the Fish River Canyon</h5>
+                            <p class="card-text">Conquer one of Africa's largest canyons. Hike challenging trails, camp under the stars, and be awed by the sheer scale of the Fish River Canyon.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <!-- About Us Section with Enhanced Details -->
+        <section id="about-us">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Us</h2>
+                    <p>Welcome to Namibian Tourism, your gateway to unforgettable adventures in Namibia.</p>
+                    <p>Our journey began in the heart of this magnificent country, where a deep passion for nature and culture inspired the creation of Namibian Tourism.</p>
+                    <p>We are more than a travel company; we are dedicated storytellers, intrepid explorers, and champions of sustainable tourism. Our mission: crafting enduring memories while preserving Namibia's unique ecosystems and cultural heritage.</p>
+                    <p>What defines us is our unwavering authenticity. We collaborate closely with local communities to provide immersive cultural encounters and champion responsible travel. From the iconic red dunes of the Namib Desert to the wildlife-rich expanse of Etosha National Park, we invite you to experience Namibia's splendor.</p>
+                    <p>Join us on a journey of revelation, where each adventure narrates a tale, and every stride brings you nearer to the soul of Namibia.</p>
+                </div>
+                
+                <div class="col-md-6">
+                    <h2>Our Team</h2>
+                    <div class="row">
+                        <!-- Team Member 1 -->
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="" class="card-img-top team-member-img" alt="Team Member 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mbanga Sinkumbwa</h5>
+                                    <p class="card-text">CEO</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 2 -->
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="" class="card-img-top team-member-img" alt="Team Member 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Max Mugwala</h5>
+                                    <p class="card-text">Marketing Manager</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 3 -->
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="" class="card-img-top team-member-img" alt="Team Member 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bob Johnson</h5>
+                                    <p class="card-text">Tour Guide</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 4 -->
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="" class="card-img-top team-member-img" alt="Team Member 4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sarah Davis</h5>
+                                    <p class="card-text">Customer Support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="signupUsername">Username</label>
+                            <input type="text" class="form-control" id="signupUsername" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email address</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupConfirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm password">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms">
+                            <label class="form-check-label" for="agreeTerms">I agree to the terms and conditions</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Sign Up</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signinModal">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="signinEmail">Email address</label>
+                            <input type="email" class="form-control" id="signinEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="signinPassword">Password</label>
+                            <input type="password" class="form-control" id="signinPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <p><a href="#" data-dismiss="modal" data-toggle="modal" data-target="#signupModal">Sign Up</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="resetEmail">Email address</label>
+                            <input type="email" class="form-control" id="resetEmail" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Footer with Icons -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-md-4 contact-info">
+                    <h5>Contact Us</h5>
+                    <p>Verdi Street</p>
+                    <p>Windhoek, Namibia</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 quick-links">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="col-md-4 follow-us">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled list-inline social-icons">
+                        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="row mt-4">
+                <div class="col-md-6 additional-info">
+                    <h5>Additional Information</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Signup Form -->
+                <div class="col-md-6 newsletter-form">
+                    <h5>Subscribe to Our Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright Information -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center copyright">
+                    <p>&copy; 2023 Mbanga Sinkumbwa. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            const heroSentences = [
+                "Discover the beauty of Namibia's landscapes.",
+                "Embark on a journey through the heart of Africa.",
+                "Experience the thrill of safari adventures.",
+                "Explore the culture and heritage of Namibia.",
+                "Witness the wonders of the Namib Desert.",
+                "Get lost in the serenity of Etosha National Park.",
+                "Feel the adrenaline on a desert dune bashing tour.",
+                "Savor the flavors of Namibian cuisine.",
+                "Meet friendly locals and hear their stories.",
+                "Camp under the starry Namibian sky.",
+                "Capture incredible wildlife moments.",
+                "Hike through ancient rock formations.",
+                "Feel the mist at Victoria Falls.",
+                "Marvel at the power of the Zambezi River.",
+                "Discover hidden gems in Namibia's towns.",
+                "Experience the thrill of quad biking in the desert.",
+                "Learn about the San Bushmen's ancient traditions.",
+                "Visit historic colonial-era landmarks.",
+                "Feel the pulse of Windhoek's vibrant nightlife.",
+                "Sail along the Skeleton Coast's haunting shores.",
+                "Track elusive desert-adapted elephants.",
+                "Explore the eerie beauty of Deadvlei.",
+                "Go bird-watching in Namibia's diverse habitats.",
+                "Connect with nature in the Caprivi Strip.",
+                "Roam with cheetahs at a conservation center.",
+            ];
+
+        // Function to fetch a random image from Unsplash with a specific query
+        function fetchRandomImage(query) {
+            return fetch(`https://source.unsplash.com/1600x900/?${query}`)
+                .then(response => {
+                    if (response.ok) {
+                        return response.url;
+                    } else {
+                        throw new Error('Error fetching image');
+                    }
+                })
+                .catch(error => console.error('Error fetching image:', error));
+        }
+        // Function to set background image for the hero section
+        function setHeroImage() {
+            fetchRandomImage('safari-travel')
+                .then(imageUrl => {
+                    const hero = document.querySelector('.hero');
+                    hero.style.backgroundImage = `url('${imageUrl}')`;
+                });
+        }
+
+        // Function to set random sentences for hero section
+        function setHeroContent() {
+            const randomIndex = Math.floor(Math.random() * heroSentences.length);
+            const sentence = heroSentences[randomIndex];
+            document.querySelector('.hero-paragraph').textContent = sentence;
+        }
+        // Function to set random images for tour cards with specific queries
+        function setTourImages() {
+            const tourCardImages = document.querySelectorAll('.tour-card-img');
+            const tourQueries = [
+                'namib-desert',
+                'etosha',
+                'himba',
+                'Fish River Canyon, Namibia'
+            ];
+
+            tourCardImages.forEach((img, index) => {
+                fetchRandomImage(tourQueries[index])
+                    .then(imageUrl => {
+                        img.src = imageUrl;
+                    });
+            });
+}
+
+        // Function to set random images for team members
+        function setTeamMemberImages() {
+            const teamMemberImages = document.querySelectorAll('.team-member-img');
+            teamMemberImages.forEach(img => {
+                fetchRandomImage('Face')
+                    .then(imageUrl => {
+                        img.src = imageUrl;
+                    });
+            });
+        }
+
+        // Initial fetch for tour cards and team members
+        setHeroImage();
+        setHeroContent();
+        setTourImages();
+        setTeamMemberImages();
+
+        setInterval(() => {
+            setHeroContent();
+        }, 8500);
+
+        // Refresh images every 5 minutes
+        setInterval(() => {
+            refreshHero();
+            setTourImages();
+            setTeamMemberImages();
+        }, 300000); // 300000 milliseconds = 5 minutes
+
+        
+    </script>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namibian Tourism</title>
+    <!-- Include Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <!-- Logo -->
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="#">
+                            <img src="logo.svg" alt="Namibian Tourism Logo" width="50">
+                            Namibian Tourism
+                        </a>
+                    </div>
+
+                    <!-- Navigation Items -->
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="#">Home</a>
+                            <a class="navbar-item" href="#">Tours</a>
+                            <a class="navbar-item" href="#">Destinations</a>
+                            <a class="navbar-item" href="#">About Us</a>
+                        </div>
+                    </div>
+
+                    <!-- Sign Up and Sign In Options -->
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="#" data-target="signupModal">Sign Up</a>
+                            <a class="navbar-item" href="#" data-target="signinModal">Sign In</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div id="dynamicContent">
+            <!-- Content dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Sign Up Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sign Up</p>
+                <button class="delete" aria-label="close" data-dismiss="signupModal"></button>
+            </header>
+            <section class="modal-card-body">
+                <form>
+                    <div class="field">
+                        <label class="label" for="signupUsername">Username</label>
+                        <div class="control">
+                            <input class="input" type="text" id="signupUsername" placeholder="Enter username">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="signupEmail">Email address</label>
+                        <div class="control">
+                            <input class="input" type="email" id="signupEmail" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="signupPassword">Password</label>
+                        <div class="control">
+                            <input class="input" type="password" id="signupPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="signupConfirmPassword">Confirm Password</label>
+                        <div class="control">
+                            <input class="input" type="password" id="signupConfirmPassword" placeholder="Confirm password">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox" id="agreeTerms">
+                                I agree to the terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                    <p class="has-text-centered">
+                        Already have an account? <a href="#" data-dismiss="signupModal" data-target="signinModal">Sign In</a>
+                    </p>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" type="submit">Sign Up</button>
+                <button class="button" data-dismiss="signupModal">Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div class="modal" id="signinModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Sign In</p>
+                <button class="delete" aria-label="close" data-dismiss="signinModal"></button>
+            </header>
+            <section class="modal-card-body">
+                <form>
+                    <div class="field">
+                        <label class="label" for="signinEmail">Email address</label>
+                        <div class="control">
+                            <input class="input" type="email" id="signinEmail" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="signinPassword">Password</label>
+                        <div class="control">
+                            <input class="input" type="password" id="signinPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <p class="has-text-centered">
+                        Don't have an account? <a href="#" data-dismiss="signinModal" data-target="signupModal">Sign Up</a> |
+                        <a href="#" data-target="forgotPasswordModal" data-dismiss="signinModal">Forgot Password?</a>
+                    </p>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" type="submit">Sign In</button>
+                <button class="button" data-dismiss="signinModal">Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Forgot Password</p>
+                <button class="delete" aria-label="close" data-dismiss="forgotPasswordModal"></button>
+            </header>
+            <section class="modal-card-body">
+                <form>
+                    <div class="field">
+                        <label class="label" for="resetEmail">Email address</label>
+                        <div class="control">
+                            <input class="input" type="email" id="resetEmail" placeholder="Enter email">
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" type="submit">Reset Password</button>
+                <button class="button" data-dismiss="forgotPasswordModal">Cancel</button>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Enhanced Footer with Icons -->
+    <footer class="hero is-dark">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <!-- Contact Information -->
+                    <div class="column is-one-third">
+                        <h5 class="title is-5">Contact Us</h5>
+                        <p>Verdi Street</p>
+                        <p>Windhoek, Namibia</p>
+                        <p>Email: info@example.com</p>
+                        <p>Phone: +1 (123) 456-7890</p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="column is-one-third">
+                        <h5 class="title is-5">Quick Links</h5>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="column is-one-third">
+                        <h5 class="title is-5">Follow Us</h5>
+                        <ul class="social-icons">
+                            <li><a href="#" class="has-text-white"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#" class="has-text-white"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="has-text-white"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" class="has-text-white"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="columns mt-4">
+                    <div class="column is-half">
+                        <h5 class="title is-5">Additional Information</h5>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter Signup Form -->
+                    <div class="column is-half">
+                        <h5 class="title is-5">Subscribe to Our Newsletter</h5>
+                        <form>
+                            <div class="field has-addons">
+                                <div class="control is-expanded">
+                                    <input type="email" class="input" placeholder="Enter your email">
+                                </div>
+                                <div class="control">
+                                    <button class="button is-primary" type="submit">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Copyright Information -->
+                <div class="columns mt-4">
+                    <div class="column is-full has-text-centered">
+                        <p>&copy; 2023 Mbanga Sinkumbwa. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Bulma JavaScript (Optional) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bulma@0.9.3/js/bulma.min.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript to handle modal toggling
+        $(document).ready(function () {
+            // Open modal
+            $('[data-target]').click(function () {
+                var target = $(this).data('target');
+                $('html').addClass('is-clipped');
+                $('#' + target).addClass('is-active');
+            });
+
+            // Close modal
+            $('.modal-background, .delete, .modal-card-foot button').click(function () {
+                $('html').removeClass('is-clipped');
+                $(this).closest('.modal').removeClass('is-active');
+            });
+
+            // Dismiss modal and open another modal
+            $('[data-dismiss]').click(function () {
+                var dismiss = $(this).data('dismiss');
+                $('#' + dismiss).removeClass('is-active');
+                var target = $(this).data('target');
+                $('#' + target).addClass('is-active');
+            });
+        });
+    </script>
+</body>
+</html>
